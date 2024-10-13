@@ -1,0 +1,111 @@
+
+.responsive-navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #333;
+    gap: 60%;
+    color: #fff;
+    position: sticky;
+    z-index: 10;
+  }
+  
+  .logo a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5rem;
+  }
+  
+  .nav-links ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-links ul li {
+    margin-left: 20px;
+  }
+  
+  .nav-links ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+  }
+  
+  /* Mobile Menu Icon */
+  .menu-icon {
+    display: none;
+    cursor: pointer;
+  }
+  
+  .menu-icon div {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 5px;
+    transition: all 0.3s ease;
+  }
+  
+  /* Change icon appearance when menu is open */
+  .menu-icon.open .bar1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+  
+  .menu-icon.open .bar2 {
+    opacity: 0;
+  }
+  
+  .menu-icon.open .bar3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .nav-links {
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      background-color: #333;
+      height: 0;
+      overflow: hidden;
+      transition: height 0.3s ease;
+      z-index: 9;
+    }
+  
+    .nav-links.active {
+      height: 200px; /* Adjust as per the number of links */
+    }
+  
+    .nav-links ul {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+    }
+  
+    .nav-links ul li {
+      margin: 15px 0;
+    }
+  
+    .menu-icon {
+      display: block;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .logo a {
+      font-size: 1.2rem;
+    }
+  
+    .nav-links.active {
+      height: 250px; 
+    }
+  
+    .nav-links ul li a {
+      font-size: 1.2rem;
+    }
+  }
+  

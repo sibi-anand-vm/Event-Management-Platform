@@ -1,0 +1,89 @@
+.event-list-container {
+  padding: 20px;
+}
+
+.events-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px; 
+}
+
+.event-card {
+  background-color: #f8f4f4;
+  border: 2px solid #2bff00;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: row; 
+  width: 100%; 
+  max-width: 1300px; 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+}
+
+.event-card-content {
+  display: flex;
+  flex-direction: column; 
+  flex-grow: 1; 
+}
+
+.event-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.event-card-header h1{
+  margin-bottom: 2%;
+}
+.event-card-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.edit-btn,
+.delete-btn,.reg-btn {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+}
+
+.edit-btn:hover,
+.delete-btn:hover,.reg-btn :hover {
+  background-color: #0056b3; 
+}
+.edit-form {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.reg-btn{
+  padding: 15px 40px;
+  background-color: #2bdf3a;
+} 
+.delete-btn{
+  background-color: #e61912;
+}
+.edit-form input,
+.edit-form textarea {
+  margin-bottom: 10px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.edit-form button {
+  padding: 8px 16px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.edit-form button:hover {
+  background-color: #0056b3;
+}

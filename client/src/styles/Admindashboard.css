@@ -1,0 +1,119 @@
+.admin-dashboard{
+    background-color: #e8f1f8; 
+    min-height: 100vh;
+}
+
+  .webheader {
+    font-size: 2.5rem;
+    color: #333;
+  }
+  
+  .add-event-container {
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  .add-event-button{
+    margin-left: 2%;
+  }
+  
+  .add-event-button {
+    cursor: pointer;
+    width: 50px;
+    transition: transform 0.3s ease;
+  }
+  
+  .add-event-button:hover {
+    transform: scale(1.1);
+  }
+  
+  .form-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    width: 100%;
+  }
+  
+  .event-form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .event-form h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .event-form input,
+  .event-form textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+  
+  .event-form textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+  
+  .event-form button {
+    padding: 12px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1rem;
+  }
+  
+  .event-form button:hover {
+    background-color: #218838;
+  }
+  
+  @media (max-width: 768px) {
+    .add-event-container {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .add-event-button {
+      margin-top: 10px;
+    }
+  
+    .event-form {
+      width: 100%;
+      max-width: 100%;
+      padding: 15px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .webheader {
+      font-size: 2rem;
+    }
+  
+    .event-form h3 {
+      font-size: 1.5rem;
+    }
+  
+    .event-form input,
+    .event-form textarea,
+    .event-form button {
+      font-size: 0.9rem;
+    }
+  }
+  
