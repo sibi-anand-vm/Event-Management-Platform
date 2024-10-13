@@ -1,30 +1,14 @@
-import { useEffect, useState, useContext } from 'react';
+import { useState, useContext } from 'react';
 import axiosInstance from '../../services/api';
 import '../../styles/EventList.css'; 
 import AuthContext from '../../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
 
-const EventList = () => {
+const EventList = ({ events, setEvents }) => {
   const navigate = useNavigate();
-  const [events, setEvents] = useState([]);
-  const [loading, setLoading] = useState(true);
   const [editingEventId, setEditingEventId] = useState(null); 
   const [editForm, setEditForm] = useState({ name: '', date: '', description: '', location: '' });
   const { user } = useContext(AuthContext);
-
-  useEffect(() => {
-    const fetchEvents = async () => {
-      try {
-        const { data } = await axiosInstance.get('/events'); 
-        setEvents(data);
-        setLoading(false);
-      } catch (error) {
-        console.error('Error fetching events:', error);
-        setLoading(false);
-      }
-    };
-    fetchEvents();
-  }, []);
 
   const deleteEvent = async (id) => {
     const token = user.token;
@@ -87,7 +71,6 @@ const EventList = () => {
       alert(errorMessage);
     }
   };
-  
 
   const handleUpdateEvent = async (id) => {
     const token = user.token;
@@ -114,12 +97,8 @@ const EventList = () => {
     }
   };
 
-  if (loading) {
-    return <p>Loading events...</p>;
-  }
-
-  if (events.length === 0) {
-    return <p>No events available. Add some events to see them here.</p>;
+  if (!events || events.length === 0) {
+    return <p>No events available. Try another search.</p>;
   }
 
   return (
@@ -152,7 +131,7 @@ const EventList = () => {
                   </div>
                 )}
               </div>
-              <div className='event-card-header'> 
+              <div className="event-card-details"> 
                 <p>Location: {event.location}</p>
                 <button
                   className="reg-btn"
@@ -193,6 +172,9 @@ const EventList = () => {
                   />
                   <button onClick={() => handleUpdateEvent(event._id)}>
                     Save Changes
+                  </button>
+                  <button onClick={() => setEditingEventId(null)}>
+                    Cancel
                   </button>
                 </div>
               )}
